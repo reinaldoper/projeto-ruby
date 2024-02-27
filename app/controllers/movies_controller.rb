@@ -22,6 +22,20 @@ class MoviesController < ApplicationController
     end
   end
 
+  def import
+    json_data = params[:json_data]
+    ImportMoviesJob.perform_later(json_data)
+
+    redirect_to movies_path, notice: "Importação de filmes iniciada em segundo plano."
+  end
+
+  def submit_scores_in_bulk
+    scores_data = params[:scores_data]
+    SubmitScoresInBulkJob.perform_later(scores_data)
+
+    redirect_to movies_path, notice: "Submissão de notas em massa iniciada em segundo plano."
+  end
+
   private
 
   def movie_params
