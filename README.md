@@ -11,6 +11,7 @@
 bundle install
 rails db:migrate
 rails db:seed
+rails server
 ```
 
 ## Rota de Importação de Filmes
