@@ -1,0 +1,13 @@
+<h1>Bulk Score Submission</h1>
+
+<%= form_tag submit_scores_in_bulk_movies_path, method: :post do %>
+  <% @movies.each do |movie| %>
+    <div>
+      <h2><%= movie.title %></h2>
+      <%= label_tag "scores_data[#{movie.average_score}]", "Score for #{movie.title}:" %>
+      <%= number_field_tag "scores_data[#{movie.id}]", nil, in: 1..10 %>
+    </div>
+  <% end %>
+
+  <%= submit_tag 'Submit Scores', class: 'btn btn-primary' %>
+<% end %>

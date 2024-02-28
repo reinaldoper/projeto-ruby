@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
-  resources :movies, only: [:index, :new, :create]
+  resources :movies, only: [:index, :new, :create] do
+    post 'import', on: :collection, to: 'movies#import'
+    post 'submit_scores_in_bulk', on: :collection, to: 'movies#submit_scores_in_bulk'
+    get 'new_import', on: :collection, to: 'movies#new_import'
+    get 'submit_scores', on: :collection, to: 'movies#new_bulk_score_submission'
+  end
   resources :user_movies, only: [:create, :update]
 
   get '/login', to: 'sessions#new'

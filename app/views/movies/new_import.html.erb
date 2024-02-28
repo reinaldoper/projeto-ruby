@@ -1,0 +1,8 @@
+<!-- app/views/movies/new_import.html.erb -->
+
+<h1>Import Movies</h1>
+<%= form_tag import_movies_path, multipart: true do %>
+  <%= label_tag :json_data, 'Select a JSON file or paste JSON data:' %>
+  <%= file_field_tag :json_data %>
+  <%= submit_tag 'Import', class: 'btn btn-primary' %>
+<% end %>
