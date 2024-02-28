@@ -7,6 +7,8 @@ gem "rails", "~> 7.1.3"
 
 gem 'sidekiq'
 
+gem 'devise'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

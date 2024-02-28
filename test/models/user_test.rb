@@ -1,7 +1,19 @@
-require "test_helper"
+# test/models/user_test.rb
+
+require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    @user = users(:one) 
+  end
+
+  test "should be valid" do
+    assert @user.valid?
+  end
+
+  test "should require email" do
+    @user.email = nil
+    assert @user.valid?
+  end
+
 end

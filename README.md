@@ -13,6 +13,11 @@ rails db:migrate
 rails db:seed
 rails server
 ```
+## Para testar a aplicação rode:
+
+```shell
+rails test
+```
 
 ## Rota de Importação de Filmes
 - Foi adicionada uma rota import no controlador de filmes (MoviesController) para permitir a importação de filmes a partir de um arquivo JSON. 
