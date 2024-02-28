@@ -24,6 +24,25 @@ rails db:seed
 # Envia um arquivo JSON para importação de filmes em segundo plano
 ```
 
+### Exemplo do payload .json
+
+```shell
+[
+  {
+    "title": "Inception",
+    "director": "Christopher Nolan"
+  },
+  {
+    "title": "The Shawshank Redemption",
+    "director": "Frank Darabont"
+  },
+  {
+    "title": "The Godfather",
+    "director": "Francis Ford Coppola"
+  }
+]
+```
+
 ## Rota de Submissão de Notas em Lote
 
 - Uma rota submit_scores_in_bulk foi introduzida no controlador de filmes (MoviesController) para facilitar a submissão de notas em lote para vários filmes de uma só vez. 
@@ -47,24 +66,7 @@ rails db:seed
 # GET /movies/new_import
 # Exibe a página de formulário para importação de filmes
 ```
-### Exemplo do payload .json
 
-```shell
-[
-  {
-    "title": "Inception",
-    "director": "Christopher Nolan"
-  },
-  {
-    "title": "The Shawshank Redemption",
-    "director": "Frank Darabont"
-  },
-  {
-    "title": "The Godfather",
-    "director": "Francis Ford Coppola"
-  }
-]
-```
 
 ## Página de Formulário de Submissão de Notas em Lote
 
