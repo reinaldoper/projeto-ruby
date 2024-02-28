@@ -7,6 +7,8 @@
 
 ## Clone o projeto e execute os comandos:
 
+- Usuário padrão:  admin@rotten e senha admin
+
 ```shell
 bundle install
 rails db:migrate
