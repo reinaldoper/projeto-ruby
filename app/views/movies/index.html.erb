@@ -1,19 +1,48 @@
 <h1>Movies</h1>
-<%= link_to "Add new", new_movie_path %>
-<%= link_to "Import Movies", new_import_movies_path %>
-<%= link_to "Add scores", submit_scores_movies_path %>
+<div>
+  <%= link_to "Add new", new_movie_path %>
+</div>
+<div>
+  <%= link_to "Import Movies", new_import_movies_path %>
+</div>
+<div>
+  <%= link_to "Add scores", submit_scores_movies_path %>
+</div>
 <% if flash[:notice] %>
   <p class="notice"><%= flash[:notice] %></p>
 <% end %>
-<% @movies.each do |movie| %>
-  <div>
-    <h2><%= movie.title %></h2>
-    <p>Director: <%= movie.director %></p>
-    <p>Average Score: <%= movie.average_score %></p>
-    <%= form_for(current_user.user_movies.find_or_initialize_by(movie_id: movie.id), remote: true) do |f| %>
-      <%= f.hidden_field :movie_id, value: movie.id %>
-      <%= f.number_field :score, in: 1..10 %>
-      <%= f.submit "Rate" %>
-    <% end %>
-  </div>
-<% end %>
+<div id="moviesGrid"></div>
+
+<script>
+  $(document).ready(function () {
+    $("#moviesGrid").kendoGrid({
+      dataSource: {
+        transport: {
+          read: {
+            url: "/movies",
+            dataType: "json"
+          }
+        },
+        schema: {
+          model: {
+            fields: {
+              title: { type: "string" },
+              director: { type: "string" },
+              average_score: { type: "number" }
+            }
+          }
+        }
+      },
+      columns: [
+        { field: "title", title: "Title" },
+        { field: "director", title: "Director" },
+        { field: "average_score", title: "Average Score" },
+      ],
+      editable: false,
+      pageable: {
+          pageSize: 5 
+      },
+   sortable: true
+    });
+  });
+</script>
