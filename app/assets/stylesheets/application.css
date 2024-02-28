@@ -13,3 +13,191 @@
  *= require_tree .
  *= require_self
  */
+ /* assets/stylesheets/application.css */
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #333;
+  padding: 10px;
+  color: white;
+  text-align: right;
+}
+
+nav a {
+  color: rgb(8, 8, 8);
+  margin-left: 10px;
+  font-size: small;
+  text-decoration: none;
+  background-color: #fff;
+  padding: 3px;
+  border: none;
+}
+
+h1 {
+  color: #333;
+}
+
+.notice {
+  color: green;
+}
+
+#moviesGrid {
+  margin-top: 20px;
+  background-color: #b6b0b0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h1 {
+  text-align: center;
+  color: #333;
+}
+
+.login-form {
+  margin-top: 20px;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.login-form button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #45a049;
+}
+
+.movies-links-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.movies-link {
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  color: #333;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.movies-link:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.bulk-score-submission-container {
+  margin: 20px auto;
+  max-width: 600px; 
+  background-color: rgb(207, 224, 207);
+}
+
+.movie-score-container {
+  margin-bottom: 15px;
+}
+
+.movie-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.score-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.score-input {
+  width: 50px;
+}
+
+.submit-scores-btn {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-scores-btn:hover {
+  background-color: #2980b9;
+}
+
+.import-movies-container {
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+.import-movies-form {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.import-label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.import-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.import-btn {
+  background-color: #27ae60;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.import-btn:hover {
+  background-color: #219a52;
+}

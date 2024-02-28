@@ -1,13 +1,10 @@
 <h1>Movies</h1>
-<div>
-  <%= link_to "Add new", new_movie_path %>
+<div class="movies-links-container">
+  <%= link_to "Add new", new_movie_path, class: "movies-link" %>
+  <%= link_to "Import Movies", new_import_movies_path, class: "movies-link" %>
+  <%= link_to "Add scores", submit_scores_movies_path, class: "movies-link" %>
 </div>
-<div>
-  <%= link_to "Import Movies", new_import_movies_path %>
-</div>
-<div>
-  <%= link_to "Add scores", submit_scores_movies_path %>
-</div>
+
 <% if flash[:notice] %>
   <p class="notice"><%= flash[:notice] %></p>
 <% end %>
