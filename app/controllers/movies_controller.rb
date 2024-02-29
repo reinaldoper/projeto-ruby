@@ -54,7 +54,6 @@ class MoviesController < ApplicationController
 
   def submit_scores_in_bulk
     scores_data = permitted_bulk_scores_params[:scores_data]
-
     scores_data.each do |movie_id, score|
       movie = Movie.find(movie_id)
       movie.user_movies.create(user_id: current_user.id, score: score)
