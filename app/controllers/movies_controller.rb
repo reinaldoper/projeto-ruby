@@ -39,14 +39,15 @@ class MoviesController < ApplicationController
     end
   
     movies_data = JSON.parse(json_data.read)
-    
+  
     movies_data.each do |movie_data|
-      Movie.create(title: movie_data['title'], director: movie_data['director'])
+      MovieImportJob.perform_later(movie_data)
     end
   
-    flash[:notice] = "Film importing completed."
+    flash[:notice] = "Film importing initiated in the background."
     redirect_to movies_path
   end
+  
   
   def new_bulk_score_submission
     @movies = Movie.all 
@@ -54,11 +55,10 @@ class MoviesController < ApplicationController
 
   def submit_scores_in_bulk
     scores_data = permitted_bulk_scores_params[:scores_data]
+
     scores_data.each do |movie_id, score|
-      movie = Movie.find(movie_id)
-      movie.user_movies.create(user_id: current_user.id, score: score)
+      MovieSubmissionJob.perform_later(movie_id, score, current_user.id)
     end
-    
 
     redirect_to movies_path, notice: "Bulk grade submission initiated in the background."
   end
