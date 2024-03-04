@@ -84,7 +84,7 @@ rails test
 ### Exemplo de Uso:
 
 ```shell
-# GET /movies/new_bulk_score_submission
+# GET /movies/submit_scores
 # Exibe o formulário para a submissão de notas em lote
 ```
 
